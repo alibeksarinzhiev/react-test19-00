@@ -1,0 +1,11 @@
+{
+  "users": [
+    {
+      "email": "ali99@mail.ru",
+      "password": "$2a$10$NtUne2jTM7v5DfRZwuWj1.1Pl9qFQ9YH2Pboc5AH4A4bgf5UQrGYm",
+      "name": "алибек",
+      "id": 1
+    }
+  ],
+  "clothes": []
+}

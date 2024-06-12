@@ -5,6 +5,10 @@ import logo from './img/dress (1) 1.png'
 import phone from './img/Заказ звонка.png'
 import phoneHover from './img/Заказ звонка (hover).png'
 import cart from './img/shopping-bags 1.png'
+import { FiUserMinus } from "react-icons/fi";
+import { LuUserCheck2 } from "react-icons/lu";
+
+
 
 const Header = () => {
 
@@ -24,7 +28,13 @@ const Header = () => {
    imgH?.addEventListener('mouseenter',()=>{
     setImgPhone(false)
    })
-    
+
+    const [user,setUser] = useState('')
+
+   useEffect(()=>{
+        setUser(JSON.parse(localStorage.getItem('user')))
+   },[])
+
 
 
     return (
@@ -43,6 +53,12 @@ const Header = () => {
             <div className="header__info">
                 <p>  <img className='header__img' src={imgPhone?phone:phoneHover} alt=""/> +7 (495) 823-54-12</p>
                 <img src={cart} alt="" />
+                <p>{user?.name}</p>
+                <Link to='/register'>
+                    <span className='header__user'> {user?<LuUserCheck2 />:<FiUserMinus />}</span>
+
+
+                </Link>
             </div>
         </div>
        </header>

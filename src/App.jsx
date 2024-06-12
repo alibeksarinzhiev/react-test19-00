@@ -9,15 +9,15 @@ import Contact from './pages/Contact/Contact';
 import Register from './pages/Register/Register';
 import NotFound from './pages/NotFound/NotFound';
 import axios from 'axios';
+import Cart from './pages/Cart/Cart';
+import Shop from './pages/Shop/Shop';
+import OneItem from './pages/OneItem/OneItem';
+import CheckOut from './pages/CheckOut/CheckOut';
 
 const App = () => {
-    const [products,setProducts] = useState(0)
 
-useEffect(()=>{
-    axios('https://fakestoreapi.com/products')
-    .then(({data})=>setProducts(data))
-},[])
-    const name = 'alibek234567'
+
+
 
     return (
         <>
@@ -26,6 +26,10 @@ useEffect(()=>{
             <Route path='' element={<Home/>}/>
             <Route path='about' element={<About/>}/>
             <Route path='contact' element={<Contact/>}/>
+            <Route path='cart' element={<Cart/>}/>
+            <Route path='shop' element={<Shop/>}/>
+            <Route path='oneitem' element={<OneItem/>}/>
+            <Route path='checkout' element={<CheckOut/>}/>
         </Route>
         <Route path='/register' element={<Register/>}/>
         <Route path='/login' element={<Login/>}/>
