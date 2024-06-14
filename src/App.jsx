@@ -15,15 +15,19 @@ import OneItem from './pages/OneItem/OneItem';
 import CheckOut from './pages/CheckOut/CheckOut';
 
 const App = () => {
+    const [clothes,setClothes] = useState([])
 
-
+    useEffect(()=>{
+        axios('http://localhost:8080/clothes')
+        .then(({data})=>setClothes(data))
+    },[])
 
 
     return (
         <>
         <Routes>
         <Route path='/' element={<Layout/>}>
-            <Route path='' element={<Home/>}/>
+            <Route path='' element={<Home clothes={clothes}/>}/>
             <Route path='about' element={<About/>}/>
             <Route path='contact' element={<Contact/>}/>
             <Route path='cart' element={<Cart/>}/>

@@ -2,10 +2,62 @@
   "users": [
     {
       "email": "ali99@mail.ru",
-      "password": "$2a$10$NtUne2jTM7v5DfRZwuWj1.1Pl9qFQ9YH2Pboc5AH4A4bgf5UQrGYm",
+      "password": "$2a$10$gFCnntZylW7pvrRVaMC9fOVKX7iNXM9H/vWAL1vAZWKOUcj5eIa5K",
       "name": "алибек",
       "id": 1
+    },
+    {
+      "email": "ali@mail.ru",
+      "password": "$2a$10$/vN5qK2ldSL20vlnS6B34eMEbHyUW2nXT.yu.R8iJQSxKsXS8sG6W",
+      "name": "alibek",
+      "id": 2
+    },
+    {
+      "email": "ali1024@mail.ru",
+      "password": "$2a$10$kA4pwmy9cFJBozBGy0YyrOcbMTO8p5SQRQmQtgEzgXU0przcK0PkG",
+      "name": "ali",
+      "id": 3
+    },
+    {
+      "email": "alibek211@mail.ru",
+      "password": "$2a$10$CK2I8fe3Ns.MP83/nw0LGOlzUctIeUp8cZpbGSKzOqy7NPKpIr6Hy",
+      "name": "qwertyu",
+      "id": 4
     }
   ],
-  "clothes": []
+  "clothes": [
+    {
+      "id": 1,
+      "price": "3199",
+      "title": "Рубашка Синяя",
+      "category": "shirt",
+      "description": "%100.00 ХЛОПОК",
+      "img": "./assets/shirt-blue.webp",
+      "total": 100,
+      "sale": 20,
+      "isnew": "new"
+    },
+    {
+      "id": 2,
+      "price": "2990",
+      "title": "Футболка Бежевая",
+      "category": "t-shirt",
+      "description": "%100.00 ХЛОПОК",
+      "img": "./assets/t-shirt-beige.avif",
+      "total": 100,
+      "sale": 20,
+      "isnew": "old"
+    },
+    {
+      "id": 3,
+      "price": "100",
+      "title": "Рубашка Синяя",
+      "category": "shirt",
+      "description": "%100.00 ХЛОПОК",
+      "img": "./assets/shirt-blue.webp",
+      "total": 100,
+      "sale": 20,
+      "isnew": "old"
+    }
+  ]
 }

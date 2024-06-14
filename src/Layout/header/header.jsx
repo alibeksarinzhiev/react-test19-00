@@ -35,6 +35,12 @@ const Header = () => {
         setUser(JSON.parse(localStorage.getItem('user')))
    },[])
 
+   const logout =()=>{
+    localStorage.removeItem('user')
+    setUser('')
+   }
+
+
 
 
     return (
@@ -54,11 +60,14 @@ const Header = () => {
                 <p>  <img className='header__img' src={imgPhone?phone:phoneHover} alt=""/> +7 (495) 823-54-12</p>
                 <img src={cart} alt="" />
                 <p>{user?.name}</p>
-                <Link to='/register'>
-                    <span className='header__user'> {user?<LuUserCheck2 />:<FiUserMinus />}</span>
-
-
-                </Link>
+               
+                    <span className='header__user'> {user?<LuUserCheck2/>:
+                    <Link to='/register'>
+                    <FiUserMinus />
+                    </Link>
+                    }</span>
+                 
+                    {user?<button onClick={logout}>выход</button>:''}
             </div>
         </div>
        </header>
