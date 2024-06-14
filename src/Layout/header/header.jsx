@@ -52,7 +52,7 @@ const Header = () => {
             </ul>
             <div className="header__info">
                 <p>  <img className='header__img' src={imgPhone?phone:phoneHover} alt=""/> +7 (495) 823-54-12</p>
-                <img src={cart} alt="" />
+                <Link to='/cart'><img src={cart} alt="" /></Link>
                 <p>{user?.name}</p>
                 <Link to='/register'>
                     <span className='header__user'> {user?<LuUserCheck2 />:<FiUserMinus />}</span>

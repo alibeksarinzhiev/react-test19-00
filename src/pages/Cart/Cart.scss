@@ -1,0 +1,41 @@
+.cart{
+    margin-top: 270px;
+    &__contsiner{
+        
+    }
+    &__title{
+        h1{
+            font-weight: 500;             
+            font-size: 55px;
+            line-height: 110%;
+            letter-spacing: 0.02em;
+            color: #000;
+        }
+        p{
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+            span{
+                font-weight: 500;
+                font-size: 17px;
+                line-height: 140%;
+                letter-spacing: 0.02em;
+                color: #000;
+            }
+            :last-child{
+                color: #909090;
+            }
+        }
+
+    }
+    &__block{
+        &__titles{
+            background-color: #000;
+        }
+        &__line{
+            border: 1px solid #ccc;
+            width: 100%;
+            height: 1px;
+        }
+    }
+}
