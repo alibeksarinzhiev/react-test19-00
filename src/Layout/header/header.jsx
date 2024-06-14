@@ -32,12 +32,17 @@ const Header = () => {
     setUser(JSON.parse(localStorage.getItem("user")));
   }, []);
 
-  return (
-    <header className={`${scrollY < 10 ? "header" : "header scrolled"}`}>
-      <div className="header__container container">
-        <div className="header__logo">
-          <img src={logo} alt="" />
-          <h3>Womazing</h3>
+
+    
+
+    return (
+        <header className={`${scrollY<10?'header':'header scrolled'}`}>
+        <div className="header__container container">
+            <div className="header__logo">
+                <img src={logo} alt="" />
+                <h3>Womazing</h3>
+            </div>
+          
         </div>
         <ul className="header__lists">
           <li onClick={() => navigate("/")}>Главная</li>
@@ -64,7 +69,6 @@ const Header = () => {
             </span>
           </Link>
         </div>
-      </div>
     </header>
   );
 };
