@@ -5,6 +5,12 @@
       "password": "$2a$10$NtUne2jTM7v5DfRZwuWj1.1Pl9qFQ9YH2Pboc5AH4A4bgf5UQrGYm",
       "name": "алибек",
       "id": 1
+    },
+    {
+      "email": "nursultdan312314@icloud.com",
+      "password": "$2a$10$fjmwrIHrZhJ2jfs3rBYHmuNMPkT9y5IdyHajxrx9WlfPVBjj7KaL.",
+      "name": "Nursultan ",
+      "id": 2
     }
   ],
   "clothes": []

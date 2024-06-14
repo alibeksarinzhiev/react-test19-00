@@ -28,6 +28,10 @@ const Header = () => {
    imgH?.addEventListener('mouseenter',()=>{
     setImgPhone(false)
    })
+   imgH?.addEventListener('mouseleave',()=>{
+    setImgPhone(true)
+   })
+   
 
     const [user,setUser] = useState('')
 
@@ -56,8 +60,6 @@ const Header = () => {
                 <p>{user?.name}</p>
                 <Link to='/register'>
                     <span className='header__user'> {user?<LuUserCheck2 />:<FiUserMinus />}</span>
-
-
                 </Link>
             </div>
         </div>
