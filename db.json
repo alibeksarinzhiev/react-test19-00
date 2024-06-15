@@ -23,8 +23,13 @@
       "password": "$2a$10$CK2I8fe3Ns.MP83/nw0LGOlzUctIeUp8cZpbGSKzOqy7NPKpIr6Hy",
       "name": "qwertyu",
       "id": 4
+    },
+    {
+      "email": "hello@mail.com",
+      "password": "$2a$10$KJKIYf6ygncJ0CAT0EKNiufsF6R6NF8un/TH8TlanPNkozty9eGK.",
+      "name": "Hello",
+      "id": 5
     }
-  
   ],
   "clothes": [
     {
