@@ -25,6 +25,9 @@ const Header = () => {
   imgH?.addEventListener("mouseenter", () => {
     setImgPhone(false);
   });
+  imgH?.addEventListener("mouseleave", () => {
+    setImgPhone(true);
+  });
 
   const [user, setUser] = useState("");
 
@@ -60,9 +63,9 @@ const Header = () => {
             </div>
             <ul className="header__lists">
           <li onClick={() => navigate("/")}>Главная</li>
-          <li>Магазин</li>
+          <li onClick={() => navigate('/shop')}>Магазин</li>
           <li onClick={() => navigate("/about")}>О бренде</li>
-          <li>Контакты</li>
+          <li onClick={()=>navigate('/contact')}>Контакты</li>
         </ul>
             <div className="header__info">
                 <p>  <img className='header__img' src={imgPhone?phone:phoneHover} alt=""/> +7 (495) 823-54-12</p>
