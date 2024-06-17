@@ -23,8 +23,13 @@
       "password": "$2a$10$CK2I8fe3Ns.MP83/nw0LGOlzUctIeUp8cZpbGSKzOqy7NPKpIr6Hy",
       "name": "qwertyu",
       "id": 4
+    },
+    {
+      "email": "nursultdan312314@icloud.com",
+      "password": "$2a$10$gES2bR7bZLWqKihDKRZGSemnqb.JqWu.eVpOrLRLhzwY4qzUiAzcO",
+      "name": "Nursultan ",
+      "id": 5
     }
-  
   ],
   "clothes": [
     {
