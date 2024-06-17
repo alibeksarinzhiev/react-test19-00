@@ -12,6 +12,8 @@ import Shop from './pages/Shop/Shop';
 import OneItem from './pages/OneItem/OneItem';
 import CheckOut from './pages/CheckOut/CheckOut';
 import Coats from './pages/Shop/shopPages/coats/Coats';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 const App = () => {
     const [clothes,setClothes] = useState([])
@@ -20,6 +22,7 @@ const App = () => {
         axios('http://localhost:8080/clothes')
         .then(({data})=>setClothes(data))
     },[])
+
 
 
     return (
