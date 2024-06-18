@@ -1,10 +1,61 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import './OneItem.scss'
+import Shirt from '../../image/first.png'
+import photo1 from '../Shop/image/1.png'
+import photo2 from '../Shop/image/2.png'
+
 
 const OneItem = () => {
     return (
         <section>
-            <div className="container">
-                <h1>one</h1>
+            <div className="oneItem__container container">
+                <h1>Свитшот Sweet Shot</h1>
+                <p>Главная - Свитшоты - <span>Свитшот Sweet Shot</span></p>
+                <div className="oneItem">
+                    <img src={Shirt} alt="" />
+                    <div className="oneItem__right">
+                        <div className="oneItem__right__prices">
+                            <p className='sale'>$311</p>
+                            <p className='price'>$450</p>
+                        </div>
+                        <div className="oneItem__size">
+                            <p>Выберите размер</p>
+                            <div className="oneItem__size__btn">
+                                <button>S</button>
+                                <button>M</button>
+                                <button>L</button>
+                                <button>XL</button>
+                                <button>XL</button>
+                            </div>
+                        </div>
+                        <div className="oneItem__color">
+                            <p>Выберите цвет</p>
+                            <div className="oneItem__color__box">
+                                <div className="brown"></div>
+                                <div className="grey"></div>
+                                <div className="purple"></div>
+                                <div className="yellow"></div>
+                            </div>
+                        </div>
+                        <div className="oneItem__add">
+                            <div className='oneItem__add__count'>1</div>
+                            <button>Добавить в корзину</button>
+                        </div>
+                    </div>
+                </div>
+                <h2>Связанные товары</h2>
+                <div className="oneItem__carts">
+                        <div className="oneItem__cart">
+                            <img src={photo1} alt="" />
+                            <h4>Футболка USA</h4>
+                            <p><span></span> $129</p>
+                        </div>
+                        <div className="oneItem__cart">
+                            <img src={photo2} alt="" />
+                            <h4>Купальник Glow</h4>
+                            <p><span></span> $129</p>
+                        </div>
+                </div>
             </div>
         </section>
     );
