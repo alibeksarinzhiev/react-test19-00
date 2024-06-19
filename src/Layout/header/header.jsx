@@ -63,7 +63,7 @@ const Header = () => {
             </div>
             <ul className="header__lists">
           <li onClick={() => navigate("/")}>Главная</li>
-          <li onClick={() => navigate('/shop')}>Магазин</li>
+          <li>Магазин</li>
           <li onClick={() => navigate("/about")}>О бренде</li>
           <li onClick={()=>navigate('/contact')}>Контакты</li>
         </ul>
