@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './app.scss'
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
@@ -13,13 +13,14 @@ import Cart from './pages/Cart/Cart';
 import Shop from './pages/Shop/Shop';
 import OneItem from './pages/OneItem/OneItem';
 import CheckOut from './pages/CheckOut/CheckOut';
+import {useDispatch} from "react-redux";
+import {getAllClothes} from "./store/clothesSlice";
 
 const App = () => {
-    const [clothes,setClothes] = useState([])
-
+const dispatch = useDispatch()
     useEffect(()=>{
         axios('http://localhost:8080/clothes')
-        .then(({data})=>setClothes(data))
+        .then(({data})=>dispatch(getAllClothes(data)))
     },[])
 
 
@@ -27,7 +28,7 @@ const App = () => {
         <>
         <Routes>
         <Route path='/' element={<Layout/>}>
-            <Route path='' element={<Home clothes={clothes}/>}/>
+            <Route path='' element={<Home />}/>
             <Route path='about' element={<About/>}/>
             <Route path='contact' element={<Contact/>}/>
             <Route path='cart' element={<Cart/>}/>
@@ -38,6 +39,7 @@ const App = () => {
         <Route path='/register' element={<Register/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='*' element={<NotFound/>}/>
+        
 
         
         </Routes>

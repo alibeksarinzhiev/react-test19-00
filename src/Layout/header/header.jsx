@@ -7,9 +7,13 @@ import phoneHover from "./img/Заказ звонка (hover).png";
 import cart from "./img/shopping-bags 1.png";
 import { FiUserMinus } from "react-icons/fi";
 import { LuUserCheck2 } from "react-icons/lu";
+import {useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
+import {logOut} from "../../store/userSlice";
 
 const Header = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch()
 
   const [scrollY, setScrolly] = useState(null);
 
@@ -26,11 +30,16 @@ const Header = () => {
     setImgPhone(false);
   });
 
-  const [user, setUser] = useState("");
+  // const [user, setUser] = useState("");
 
-  useEffect(() => {
-    setUser(JSON.parse(localStorage.getItem("user")));
-  }, []);
+  // useEffect(() => {
+  //   setUser(JSON.parse(localStorage.getItem("user")));
+  // }, []);
+
+
+    const {user} = useSelector(state=>state.user)
+    console.log(user)
+
 
 
 
@@ -42,10 +51,10 @@ const Header = () => {
 
    
 
-   const logout =()=>{
-    localStorage.removeItem('user')
-    setUser('')
-   }
+   // const logout =()=>{
+   //  localStorage.removeItem('user')
+   //  setUser('')
+   // }
 
 
 
@@ -55,7 +64,10 @@ const Header = () => {
         <header className={`${scrollY<10?'header':'header scrolled'}`}>
         <div className="header__container container">
             <div className="header__logo">
-                <img src={logo} alt="" />
+              <Link  to={'/'}>
+              <img src={logo} alt="" />
+
+              </Link>
                 <h3>Womazing</h3>
             </div>
             <ul className="header__lists">
@@ -69,13 +81,14 @@ const Header = () => {
                 <img src={cart} alt="" />
                 <p>{user?.name}</p>
                
-                    <span className='header__user'> {user?<LuUserCheck2/>:
+                    <span className='header__user'> {user?
                     <Link to='/register'>
                     <FiUserMinus />
-                    </Link>
+                    </Link>:<LuUserCheck2/>
                     }</span>
-                 
-                    {user?<button onClick={logout}>выход</button>:''}
+
+                    {user?'':<button onClick={()=>dispatch(logOut)}>выход</button>}
+
             </div>
           
         </div>

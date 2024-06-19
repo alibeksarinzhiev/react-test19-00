@@ -2,11 +2,11 @@ import React from 'react';
 import Banner from './Banner/Banner';
 import NewCollection from './NewCollection/NewCollection';
 
-const Home = ({clothes}) => {
+const Home = () => {
     return (
         <>
         <Banner/>
-        <NewCollection clothes={clothes}/>
+        <NewCollection />
         </>
     );
 };
