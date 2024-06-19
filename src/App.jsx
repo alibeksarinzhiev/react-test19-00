@@ -15,6 +15,7 @@ import Coats from './pages/Shop/shopPages/coats/Coats';
 import { useState,useEffect } from 'react';
 import axios from 'axios';
 
+
 const App = () => {
     const [clothes,setClothes] = useState([])
 
@@ -22,6 +23,7 @@ const App = () => {
         axios('http://localhost:8080/clothes')
         .then(({data})=>setClothes(data))
     },[])
+
 
 
     return (
@@ -36,7 +38,7 @@ const App = () => {
             <Route path='shop' element={<Shop/>}/>
             <Route path='shop/coats' element={<Coats/>}/>
             <Route path='oneitem' element={<OneItem/>}/>
-            <Route path='checkout' element={<CheckOut/>}/>
+            <Route path='checkOut' element={<CheckOut/>}/>
         </Route>
         <Route path='/register' element={<Register/>}/>
         <Route path='/login' element={<Login/>}/>
