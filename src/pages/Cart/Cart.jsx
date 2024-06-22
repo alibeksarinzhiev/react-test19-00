@@ -3,8 +3,19 @@ import Line from './img/—.png'
 import Delete from './img/Vector 3.png'
 import Item from './img/Товар.png'
 import './Cart.scss'
+import {useSelector,useDispatch} from "react-redux";
+import {deleteCart} from "../../store/cartSlice";
+
 
 const Cart = () => {
+
+const {cart} = useSelector(state=>state.cartSlice)
+    const dispatch = useDispatch()
+
+    const remove = (el)=>{
+        dispatch(deleteCart(el))
+    }
+
     return (
         <section className='cart'>
             <div className="cart__container container">
@@ -26,37 +37,47 @@ const Cart = () => {
                         </div>
                     </div>
                 <div className='cart__block__line'></div>
-                <div className="cart__block__item">
-                    <div className="cart__block__left">
-                    <div className='cart__block__item__name'>
-                        <img src={Delete} alt="" />
-                        <div className='cart__block__item__img'>
-                            <img src={Item} alt="" />
-                            <h2>Футболка USA</h2>
-                        </div>
-                    </div>
-                    <div className="cart__block__item__price">
-                        <h2>$129</h2>
-                    </div>
-                    </div>
 
-                    <div className='cart__block__right'>
-                    <div className="cart__block__item__count">
-                        <h2>1</h2>
-                    </div>
-                    <div className="cart__block__item__total">
-                        <h2>$129</h2>
-                    </div>
-                    </div>
-                </div>
+
+                    {cart.map((el)=>(
+                        <div className="cart__block__item">
+                            <div className="cart__block__left">
+                                <div className='cart__block__item__name'>
+                                    <img src={Delete} alt=""  onClick={()=>remove(el)}/>
+                                    <div className='cart__block__item__img'>
+                                        <img src={el.img} alt="" />
+                                        <h2>{el.title}</h2>
+                                    </div>
+                                </div>
+                                <div className="cart__block__item__price">
+                                    <h2>{Math.floor(el.price - (el.price /100 * el.sale))} $</h2>
+                                </div>
+                            </div>
+
+                            <div className='cart__block__right'>
+                                <div className="cart__block__item__count">
+                                    <h2>{el.count}</h2>
+                                </div>
+                                <div className="cart__block__item__total">
+                                    <h2>{el.count *Math.floor(el.price - (el.price /100 * el.sale))} $</h2>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
                 <div className="cart__block__coupon">
                     <h2>Введите купон</h2>
                     <input type="text"  placeholder=''/>
                 </div>
                 <div className="cart__block__total">
-                    <h2>Подытог:<span>$129</span></h2>
+                    <h2>Подытог:<span>
+                        {cart.reduce((acc,el)=>(
+                            acc + +el.price *el.count
+                        ),0)}
+                    </span></h2>
                     <div>
-                    <h2>Итогo:<span>$129</span></h2>
+                    <h2>Итогo:<span>{cart.reduce((acc,el)=>(
+                        acc + Math.floor(el.price - (el.price /100 * el.sale)) *el.count
+                    ),0)}</span></h2>
                     </div>
                 </div>
             </div>

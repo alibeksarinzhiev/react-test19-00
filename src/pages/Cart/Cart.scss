@@ -79,6 +79,10 @@
             &__img{
                 display: flex;
                 align-items: center;
+              img {
+                  width: 137px;
+                  height: 179px;
+              }
             }
             &__count{
                 border: 1px solid #afafaf;
