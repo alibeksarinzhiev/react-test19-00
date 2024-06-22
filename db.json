@@ -2,26 +2,26 @@
   "users": [
     {
       "email": "ali99@mail.ru",
-      "password": "$2a$10$gFCnntZylW7pvrRVaMC9fOVKX7iNXM9H/vWAL1vAZWKOUcj5eIa5K",
-      "name": "алибек",
+      "password": "$2a$10$OXoP99j/zu4QURQq6CYHne6Zw4BAW0i7FN/LjWVftbHee85xJ1NNa",
+      "name": "ALIBEK",
       "id": 1
     },
     {
       "email": "ali@mail.ru",
-      "password": "$2a$10$/vN5qK2ldSL20vlnS6B34eMEbHyUW2nXT.yu.R8iJQSxKsXS8sG6W",
-      "name": "alibek",
+      "password": "$2a$10$TvvaLJsldMN7./WiF1CX9eJUDNN1n5UVwmbX9qMUhS.sCaYDqFfoq",
+      "name": "alll",
       "id": 2
     },
     {
-      "email": "ali1024@mail.ru",
-      "password": "$2a$10$kA4pwmy9cFJBozBGy0YyrOcbMTO8p5SQRQmQtgEzgXU0przcK0PkG",
-      "name": "ali",
+      "email": "ali10@mail.ru",
+      "password": "$2a$10$ryGm56XZ2W2ruH2xaoYU/eq0Y81p5Yo/dsBfwRedW/mttVYJLYmGu",
+      "name": "1111",
       "id": 3
     },
     {
-      "email": "alibek211@mail.ru",
-      "password": "$2a$10$CK2I8fe3Ns.MP83/nw0LGOlzUctIeUp8cZpbGSKzOqy7NPKpIr6Hy",
-      "name": "qwertyu",
+      "email": "ali111@mail.ru",
+      "password": "$2a$10$hG1FwXCBrYv8hYoEk9DKzOIlQpEoQgUg8CRHrlz3vDSsJY6OlU8I.",
+      "name": "22234",
       "id": 4
     },
     {
@@ -29,6 +29,12 @@
       "password": "$2a$10$gES2bR7bZLWqKihDKRZGSemnqb.JqWu.eVpOrLRLhzwY4qzUiAzcO",
       "name": "Nursultan ",
       "id": 5
+    },
+    {
+      "email": "asdfgh@mail.ru",
+      "password": "$2a$10$r4m6J7hHSf8HxlymdxbsI.oeqfBNNw1.QT1W/R.orlOG8Lsq/0TSG",
+      "name": "ALIBEK",
+      "id": 6
     }
   ],
   "clothes": [
@@ -74,7 +80,7 @@
       "category": "dresses",
       "clothes": "women",
       "description": "В состав входит хлопок. Трикотаж. Трикотаж, связанный резинкой. Фасон 'колокол'. Приталенный фасон. Длинный фасон. Круглый вырез горловины. Без рукавов. Широкая бретель. Без застежки.",
-      "img": "./assets/black__dress",
+      "img": "./assets/black__dress.avif",
       "total": 90,
       "sale": 10,
       "isnew": "new"
@@ -86,7 +92,7 @@
       "category": "dresses",
       "clothes": "women",
       "description": "Струящаяся ткань. Прямой фасон. Дизайн миди. Вырез горловины каре. Без рукавов. Узкие бретельки. Без подкладки. Без застежки. Разрез.",
-      "img": "./assets/blue__dress",
+      "img": "./assets/blue__dress.avif",
       "total": 96,
       "sale": 5,
       "isnew": "old"
@@ -122,7 +128,7 @@
       "category": "shirt",
       "clothes": "women",
       "description": "В состав входит хлопок. Тонкий трикотаж. Прямой фасон. Рубашечный воротник. Длинные рукава. Спереди застежка на пуговицы. Образы для офиса.",
-      "img": "./assets/shirt__green",
+      "img": "./assets/shirt__green.webp",
       "total": 75,
       "sale": 10,
       "isnew": "new"
@@ -134,12 +140,11 @@
       "category": "shirt",
       "clothes": "women",
       "description": "Ткань 100% хлопок. Ткань бамбула. Объемный фасон. Длинный фасон. Рубашечный воротник. Длинные рукава с пуговицами на манжетах. Спереди накладной карман. Спереди застежка на пуговицы. Тотальный образ. ",
-      "img": "./assets/cotton_shirt_with_pocket",
+      "img": "./assets/cotton_shirt_with_pocket.webp",
       "total": 80,
       "sale": 4,
       "isnew": "new"
     },
-
     {
       "id": 10,
       "price": "1990",
@@ -147,7 +152,7 @@
       "category": "t-shirt",
       "clothes": "women",
       "description": "Ткань 100% хлопок. Прямой фасон. Круглый вырез горловины. Короткие рукава. Доступно в Plus.",
-      "img": "./assets/t-shirt__red",
+      "img": "./assets/t-shirt__red.avif",
       "total": 20,
       "sale": 60,
       "isnew": "old"
@@ -159,7 +164,7 @@
       "category": "t-shirt",
       "clothes": "women",
       "description": "В состав входит хлопок. Трикотаж круговой вязки. Вязка резинкой. Прямой фасон. Круглый вырез горловины. Короткие рукава.",
-      "img": "./assets/t-shirt__blue",
+      "img": "./assets/t-shirt__blue.webp",
       "total": 25,
       "sale": 50,
       "isnew": "old"
@@ -171,7 +176,7 @@
       "category": "t-shirts",
       "clothes": "women",
       "description": "Тонкий трикотаж. Прямой фасон. Круглый вырез горловины. Короткие рукава. Без застежки. Края связан резинкой. ",
-      "img": "./assets/jumper_with_short_sleeves",
+      "img": "./assets/jumper_with_short_sleeves.webp",
       "total": 99,
       "sale": 5,
       "isnew": "new"
@@ -183,7 +188,7 @@
       "category": "t-shirts",
       "clothes": "women",
       "description": "Струящаяся ткань. Объемный фасон. Длинный фасон. Круглый вырез горловины. Короткие рукава. По бокам внизу разрезы. Тотальный образ.",
-      "img": "./assets/flowing_t-shirt",
+      "img": "./assets/flowing_t-shirt.webp",
       "total": 88,
       "sale": 6,
       "isnew": "new"
@@ -195,7 +200,7 @@
       "category": "shirt",
       "clothes": "women",
       "description": "Ткань с атласным блеском. Струящаяся ткань. Прямой фасон. Рубашечный воротник. Короткие рукава. Спереди застежка на пуговицы. Доступно в Plus.",
-      "img": "./assets/flowing_shirt_with_satin_glitter",
+      "img": "./assets/flowing_shirt_with_satin_glitter.webp",
       "total": 87,
       "sale": 2,
       "isnew": "new"

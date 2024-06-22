@@ -3,8 +3,11 @@ import './shop.scss'
 import Cart from './cart/Cart';
 import { Link } from 'react-router-dom';
 import arrowRight from '../Shop/image/Vector 1.png'
+import {useSelector} from "react-redux";
 
 const Shop = () => {
+
+    const {data} =useSelector(state=>state.clothesSlice)
     return (
         <>
         <section className='shop'>
@@ -20,9 +23,15 @@ const Shop = () => {
                 </ul>
                 <div className="shop__products-box">
                     <p>Показано: <span>9</span> из <span>12</span> товаров</p>
-                    <Cart/>
-                    <Cart/>
-                    <Cart/>
+
+                    <div  className="shop__cards">
+                        {data.map((el)=>(
+                            <Cart el={el} key={el.id}/>
+                        ))}
+                    </div>
+
+
+
                     <p>Показано: <span>9</span> из <span>12</span> товаров</p>
                     <ul>
                         <li>1</li>

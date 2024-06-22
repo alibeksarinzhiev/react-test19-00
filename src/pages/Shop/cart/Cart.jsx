@@ -1,29 +1,22 @@
 import React from 'react';
-import photo1 from '../image/1.png'
-import photo2 from '../image/2.png'
-import photo3 from '../image/3.png'
 import './cart.scss'
+import {Link} from "react-router-dom";
 
-const Cart = () => {
+const Cart = ({el}) => {
     return (
 
-        <div className="carts">
+
             <div className="cart">
-                <img src={photo1} alt="" />
-                <h4>Футболка USA</h4>
-                <p><span></span> $129</p>
+                <Link to={`/oneitem/${el.id}`}>
+                    <img className='imgShop' src={el.img} alt="" />
+                </Link>
+                <h4>{el.title}</h4>
+                <p className='discounted-price'>
+                    <span className='price'>{el.price}</span>
+                    {el.price-(el.price/100 * el.sale)}
+                </p>
             </div>
-            <div className="cart">
-                <img src={photo2} alt="" />
-                <h4>Купальник Glow</h4>
-                <p><span></span> $129</p>
-            </div>
-            <div className="cart">
-                <img src={photo3} alt="" />
-                <h4>Свитшот Sweet Shot</h4>
-                <p><span></span> $129</p>
-            </div>
-        </div>
+
         
     );
 };

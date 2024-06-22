@@ -1,18 +1,32 @@
-import React, { useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import './OneItem.scss'
 import Shirt from '../../image/first.png'
 import photo1 from '../Shop/image/1.png'
 import photo2 from '../Shop/image/2.png'
+import axios from "axios";
+import {useLocation} from "react-router-dom";
 
 
 const OneItem = () => {
+
+    const location = useLocation()
+    const id = location.pathname.split('/').at(-1)
+
+
+    const [one,setOne] = useState({})
+
+
+    useEffect(()=>{
+        axios(`http://localhost:8080/clothes/${id}`)
+            .then(({data})=>setOne(data))
+    },[])
     return (
         <section>
             <div className="oneItem__container container">
-                <h1>Свитшот Sweet Shot</h1>
-                <p>Главная - Свитшоты - <span>Свитшот Sweet Shot</span></p>
+                <h1>{one.title}</h1>
+                <p>Главная - Свитшоты - <span>{one.title}</span></p>
                 <div className="oneItem">
-                    <img src={Shirt} alt="" />
+                    <img src={'../'+one.img} alt="" />
                     <div className="oneItem__right">
                         <div className="oneItem__right__prices">
                             <p className='sale'>$311</p>

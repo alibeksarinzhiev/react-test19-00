@@ -1,10 +1,7 @@
-.carts {
-    display: flex;
-    justify-content: space-between;
-    margin: 65px 0;
-}
-
 .cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 
@@ -14,11 +11,24 @@ h4 {
     line-height: 140%;
     color: #000;
     margin: 24px 0 7px;
+    width: 250px;
 }
 
-p {
+.discounted-price {
+    
     font-weight: 500;
     font-size: 15px;
     line-height: 140%;
+   
 }
 
+.price {
+    margin-right: 10px;
+    text-decoration: line-through;
+}
+
+
+.imgShop {
+    width: 350px;
+    height: 478px;
+}
