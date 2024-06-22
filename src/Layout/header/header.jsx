@@ -7,9 +7,22 @@ import phoneHover from "./img/Заказ звонка (hover).png";
 import cart from "./img/shopping-bags 1.png";
 import { FiUserMinus } from "react-icons/fi";
 import { LuUserCheck2 } from "react-icons/lu";
+import {useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
+import {logOut} from "../../store/userSlice";
+import {animateScroll} from "react-scroll";
+
 
 const Header = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch()
+    const toTop = () => {
+        animateScroll.scrollToTop({
+            delay: 0,
+            duration: 0,
+            smooth:true
+        })
+    };
 
   const [scrollY, setScrolly] = useState(null);
 
@@ -25,12 +38,15 @@ const Header = () => {
   imgH?.addEventListener("mouseenter", () => {
     setImgPhone(false);
   });
+  imgH?.addEventListener("mouseleave", () => {
+    setImgPhone(true);
+  });
 
-  const [user, setUser] = useState("");
 
-  useEffect(() => {
-    setUser(JSON.parse(localStorage.getItem("user")));
-  }, []);
+
+
+    const {user} = useSelector(state=>state.user)
+
 
 
 
@@ -42,11 +58,6 @@ const Header = () => {
 
    
 
-   const logout =()=>{
-    localStorage.removeItem('user')
-    setUser('')
-   }
-
 
 
     
@@ -55,27 +66,43 @@ const Header = () => {
         <header className={`${scrollY<10?'header':'header scrolled'}`}>
         <div className="header__container container">
             <div className="header__logo">
-                <img src={logo} alt="" />
+              <Link  to={'/'}>
+              <img src={logo} alt="" />
+
+              </Link>
                 <h3>Womazing</h3>
             </div>
             <ul className="header__lists">
-          <li onClick={() => navigate("/")}>Главная</li>
-          <li>Магазин</li>
-          <li onClick={() => navigate("/about")}>О бренде</li>
-          <li>Контакты</li>
+          <li onClick={() =>{
+              navigate("/")
+              toTop()
+          }}>Главная</li>
+          <li onClick={()=>{
+              navigate('/shop')
+              toTop()
+          }}>Магазин</li>
+          <li onClick={() =>{
+              toTop()
+              navigate("/about")
+          }}>О бренде</li>
+          <li onClick={()=>{
+              navigate('/contact')
+              toTop()
+          }}>Контакты</li>
         </ul>
             <div className="header__info">
                 <p>  <img className='header__img' src={imgPhone?phone:phoneHover} alt=""/> +7 (495) 823-54-12</p>
-                <img src={cart} alt="" />
+                <Link to='/cart'><img src={cart} alt="" /></Link>
                 <p>{user?.name}</p>
                
-                    <span className='header__user'> {user?<LuUserCheck2/>:
+                    <span className='header__user'> {user?
                     <Link to='/register'>
                     <FiUserMinus />
-                    </Link>
+                    </Link>:<LuUserCheck2/>
                     }</span>
-                 
-                    {user?<button onClick={logout}>выход</button>:''}
+
+                    {user?'':<button onClick={()=>dispatch(logOut)}>выход</button>}
+
             </div>
           
         </div>
